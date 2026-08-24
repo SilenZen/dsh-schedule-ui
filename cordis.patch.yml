@@ -1,0 +1,8 @@
+# dsh-schedule-ui bundle patch
+#
+# `dsh plugin --profile <name> add dsh-schedule-ui` 看到 package.json 的
+# dsh.bundle.patch 声明后，会把这行 insert 合入 profile 组合（与手动
+# cordis.patch.yml 挂载行等价）。
+- insert:
+    - id: schedule-ui
+      name: 'dsh-schedule-ui'

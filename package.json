@@ -1,10 +1,15 @@
 {
   "name": "dsh-schedule-ui",
-  "description": "定时任务管理面板：会话头部按钮 + 全局浮层（host 经 HTTP 路由提供读写，client 为预构建 bundle）",
   "version": "0.1.0",
-  "private": true,
+  "description": "定时任务管理界面：会话头部按钮 + 全局浮层面板 + 侧边栏分区，为 @deepseek-ai/dsh-schedule 提供可视化入口",
   "type": "module",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
       "default": "./lib/index.js"
@@ -15,6 +20,9 @@
     "./package.json": "./package.json"
   },
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "inject": [
         "@deepseek-ai/dsh-client-locale",
@@ -25,5 +33,24 @@
       "platform": "web"
     }
   },
-  "license": "MIT"
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "schedule",
+    "scheduled-tasks",
+    "plugin",
+    "dsh-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SilenZen/dsh-schedule-ui.git"
+  },
+  "homepage": "https://github.com/SilenZen/dsh-schedule-ui",
+  "bugs": {
+    "url": "https://github.com/SilenZen/dsh-schedule-ui/issues"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
